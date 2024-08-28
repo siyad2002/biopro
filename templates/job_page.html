@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<div class="container">
+    {%for data in job_data %}
+ <div class="row">
+<div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">{{data.job_name}}</h5>
+    <a href="/jobview/{{data.id}}" class="btn btn-primary" style="background: #a5c422;">View</a>
+  </div>
+</div>
+</div>
+ {%endfor%}
+</div>
+{%endblock%}

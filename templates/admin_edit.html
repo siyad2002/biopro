@@ -1,0 +1,56 @@
+{%extends 'admin_base.html'%}
+{%load static%}
+{%block content%}
+<section id="appointment" data-stellar-background-ratio="3">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <!-- CONTACT FORM HERE -->
+                         <form method="POST" enctype="multipart/form-data" action="{%url 'adminedit' id=data.id%}">
+                              {%csrf_token%}
+
+                              <!-- SECTION TITLE -->
+                                   <div>
+                                        {{form.doc_name}}
+                                   </div>
+
+                                   <div>
+                                        {{form.designation}}
+                                   </div>
+
+                                   <div>
+                                        {{form.age}}
+                                   </div>
+
+                                    <div>
+                                        {{form.exp}}
+                                   </div>
+
+                                   <div>
+                                        {{form.doc_dep}}
+                                   </div>
+
+                                   <div>
+                                        {{form.qualification}}
+                                   </div>
+
+                                   <div>
+                                        {{form.opening_time}}
+                                   </div>
+
+                                   <div>
+                                        {{form.day}}
+                                   </div>
+
+                                   <div>
+                                        {{form.place}}
+                                        <button type="submit" class="form-control" id="cf-submit" name="submit">Edit</button>
+                                   </div>
+                              </div>
+                        </form>
+                    </div>
+               </div>
+          </div>
+     </section>
+{%endblock%}

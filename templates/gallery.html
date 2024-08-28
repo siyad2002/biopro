@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<div class="container">
+
+    <div class="row">
+        {%for data in gallery_data %}
+        <div class="col-md-4 mt-6">
+        <div class="card" style="margin-left:30px;">
+            <img src="{{data.image.url}}" class="card-img-top" alt="..." style="height: 370px; width: 374px;">
+        <div class="card-body" >
+            <h5 class="card-title">{{data.description}}</h5>
+            <video class="video" controls style="width: 502px; height: 250px">
+                <source src="{{data.video.url}}" type="{{data.content_type}}" >
+            </video>
+        </div>
+        </div>
+        </div>
+
+        {%endfor%}
+    </div>
+
+</div>
+{%endblock%}

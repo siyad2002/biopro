@@ -1,0 +1,65 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+     <!-- TEAM -->
+     <section id="team" data-stellar-background-ratio="1">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <h2 class="wow fadeInUp" data-wow-delay="0.1s">Our Doctors</h2>
+                         </div>
+                    </div>
+                    <form method="GET" class="form-inline">
+                         <input type="text" name="query" placeholder="Name/Department..">
+                         <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
+                              <i class="fa fa-search" aria-hidden="true"></i>
+                         </button>
+                    </form>
+                    <div class="clearfix"></div>
+                    {% if doctors %}
+                    {% for data in doctors%}
+                    <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+                              <img src="{{data.doc_img.url}}" class="img-responsive" alt="">
+
+                                   <div class="team-info">
+                                        <a href="/doctorsprofile/{{data.id}}">
+                                        <h3>{{data.doc_name}}</h3>
+                                        <p>{{data.doc_dep}}</p>
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-linkedin-square"></a></li>
+                                             <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                        </ul>
+                                    </a>
+                                   </div>
+
+                         </div>
+                    </div>
+                    {%endfor%}
+                    {% else %}}
+                     {% for data in results%}
+                             <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+                              <img src="{{data.doc_img.url}}" class="img-responsive" alt="">
+
+                                   <div class="team-info">
+                                        <a href="/doctorsprofile/{{data.id}}">
+                                        <h3>{{data.doc_name}}</h3>
+                                        <p>{{data.doc_dep}}</p>
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-linkedin-square"></a></li>
+                                             <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                        </ul>
+                                    </a>
+                                   </div>
+
+                         </div>
+                    </div>
+                    {%endfor%}
+                    {% endif %}
+               </div>
+          </div>
+     </section>
+{%endblock%}

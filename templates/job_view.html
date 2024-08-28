@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<div class="container">
+    <h3>{{data.job_name}}</h3><br>
+    <h5>About Role :</h5>
+    <p>{{data.about_role}}</p><br>
+    <h5>Requirements :</h5>
+    <p>{{data.requirements}}</p><br>
+    <h5>Company Name :</h5>
+    <p>{{data.company_name}}</p><br>
+    <h5>About Name :</h5>
+    <p>{{data.about_name}}</p><br>
+     <a href="/careeradd/" class="btn btn-primary" style="background: #a5c422;">Apply</a>
+</div>
+{%endblock%}

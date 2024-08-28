@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<div class="container">
+<div class="card">
+  <img src="{{data.doc_img.url}}" class="card-img-top" alt="..." style="height: 370px;
+    width: 374px;">
+  <div class="card-body" >
+    <h3 class="card-title">{{data.doc_name}}</h3>
+    <div style="color:Gray">
+    <h5 class="card-text">Designation : {{data.designation}}</h5>
+    <h5 class="card-text">Age : {{data.age}}</h5>
+    <h5 class="card-text">Experience : {{data.exp}}</h5>
+    <h5 class="card-text">Department : {{data.doc_dep}}</h5>
+    <h5 class="card-text">Qualification : {{data.qualification}}</h5>
+    <h5 class="card-text"> Opening Time : {{data.opening_time}}</h5>
+    <h5 class="card-text">Days : {{data.day}}</h5>
+    <h5 class="card-text">Country : {{data.place}}</h5>
+    </div>
+  </div>
+</div>
+</div>
+<div class="form_container">
+  <div style="width: 500px;
+        margin-left: 194px;">
+    <h3>Review</h3>
+    {% for row in review %}
+    <p>{{row.review_text}} --- {{row.created_at}}</p>
+    {% endfor %}
+    <form method="POST" action="{% url 'doctorsprofile' id=data.id%}">
+      {% csrf_token %}
+      <div>
+      <label>Comment</label>{{form.review_text}}
+      </div>
+      <div class="btn-box">
+         <button type="submit" class="form-control" id="cf-submit" name="submit" style="background: #a5c422;">Submit Button</button>
+      </div>
+    </form>
+  </div>
+</div>
+{%endblock%}

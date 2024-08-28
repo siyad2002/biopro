@@ -1,0 +1,47 @@
+{%extends 'admin_base.html'%}
+{%load static%}
+{%block content%}
+<div class="container" style="margin-top: 100px;">
+    <table class="table caption-top">
+  <thead>
+    <tr>
+
+      <th scope="col">doc_name</th>
+      <th scope="col">designation</th>
+      <th scope="col">age</th>
+        <td>{{data.exp}}</td>
+        <th scope="col">doc_dep</th>
+        <th scope="col">qualification</th>
+        <th scope="col">opening_time</th>
+        <th scope="col">day</th>
+         <th scope="col">place</th>
+    </tr>
+  </thead>
+  <tbody>
+ {% for data in doctors%}
+    <tr>
+       <td>{{data.doc_name}}</td>
+       <td>{{data.designation}}</td>
+       <td>{{data.age}}</td>
+        <td>{{data.exp}}</td>
+       <td>{{data.doc_dep}}</td>
+       <td>{{data.qualification}}</td>
+       <td>{{data.opening_time}}</td>
+       <td>{{data.day}}</td>
+       <td>{{data.place}}</td>
+        <td>
+            <a href="/adminedit/{{data.id}}" class="btn btn-primary btn-sm">
+                        <i class="bi bi-pencil"></i> Edit
+                    </a>
+            <a href="/admindelete/{{data.id}}" class="btn btn-danger btn-sm">
+                        <i class="bi bi-trash"></i> Delete
+            </a>
+        </td>
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+
+</div>
+
+{%endblock%}

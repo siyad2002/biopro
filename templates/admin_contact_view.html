@@ -1,0 +1,31 @@
+{%extends 'admin_base.html'%}
+{%load static%}
+{%block content%}
+<div class="container" style="margin-top: 100px;">
+    <table class="table caption-top">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Email</th>
+       <th scope="col">Message</th>
+    </tr>
+  </thead>
+  <tbody>
+ {% for data in contact_data%}
+    <tr>
+      <td>{{data.id}}</td>
+       <td>{{data.Name}}</td>
+       <td>{{data.Subject}}</td>
+       <td>{{data.Email}}</td>
+       <td>{{data.Message}}</td>
+
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+
+</div>
+
+{%endblock%}

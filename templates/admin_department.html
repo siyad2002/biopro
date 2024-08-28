@@ -1,0 +1,36 @@
+{%extends 'admin_base.html'%}
+{%load static%}
+{%block content%}
+<section id="appointment" data-stellar-background-ratio="3">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <!-- CONTACT FORM HERE -->
+                         <form method="POST" id="appointment-form" role="form">
+                              {%csrf_token%}
+
+                              <!-- SECTION TITLE -->
+                              <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                                   <h2>Department us</h2>
+                              </div>
+
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <div class="col-md-12 col-sm-12">
+                                        {{form.Title}}
+                                   </div>
+
+                                   <div class="col-md-12 col-sm-12">
+                                        {{form.Description}}
+                                   </div>
+
+                                        <button type="submit" class="form-control" id="cf-submit" name="submit">Submit Button</button>
+                                   </div>
+                              </div>
+                        </form>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+ {%endblock%}
